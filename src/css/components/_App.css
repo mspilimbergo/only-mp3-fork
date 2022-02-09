@@ -6,7 +6,15 @@
 
   .app__main,
   .app__central-container {
+    margin-top: 5em;
     margin-bottom: 2em;
+  }
+
+  .app__central-container-palette {
+    margin-top: 3em;
+    margin-bottom: 2em;
+    margin-left: 10em;
+    margin-right: 10em;
   }
 
   .app__frames-container {

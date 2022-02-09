@@ -1,29 +1,21 @@
 import React from 'react';
 import CookieConsent from 'react-cookie-consent';
-import PreviewBox from './PreviewBox';
-import PixelCanvasContainer from './PixelCanvas';
-import CellSizeContainer from './CellSize';
-import ColorPickerContainer from './ColorPicker';
-import ModalContainer from './Modal';
-import DimensionsContainer from './Dimensions';
-import KeyBindings from './KeyBindings';
+import drawHandlersProvider from '../utils/drawHandlersProvider';
+import initialSetup from '../utils/startup';
+import CellsInfo from './CellsInfo';
 import CssDisplayContainer from './CssDisplay';
-import DurationContainer from './Duration';
+import DimensionsContainer from './Dimensions';
 import EraserContainer from './Eraser';
-import BucketContainer from './Bucket';
-import MoveContainer from './Move';
 import EyedropperContainer from './Eyedropper';
-import FramesHandlerContainer from './FramesHandler';
+import ModalContainer from './Modal';
+import NewProjectContainer from './NewProject';
 import PaletteGridContainer from './PaletteGrid';
+import PixelCanvasContainer from './PixelCanvas';
 import ResetContainer from './Reset';
 import SaveDrawingContainer from './SaveDrawing';
-import NewProjectContainer from './NewProject';
 import SimpleNotificationContainer from './SimpleNotification';
 import SimpleSpinnerContainer from './SimpleSpinner';
-import CellsInfo from './CellsInfo';
 import UndoRedoContainer from './UndoRedo';
-import initialSetup from '../utils/startup';
-import drawHandlersProvider from '../utils/drawHandlersProvider';
 
 export default class App extends React.Component {
   constructor() {
@@ -85,7 +77,7 @@ export default class App extends React.Component {
               : null
           }
         >
-          <FramesHandlerContainer />
+          {/* <FramesHandlerContainer /> */}
         </div>
         <div className="app__central-container">
           <div className="left col-1-4">
@@ -117,7 +109,7 @@ export default class App extends React.Component {
                   >
                     <UndoRedoContainer />
                   </div>
-                  <div className="app__tools-wrapper grid-3">
+                  <div className="app__tools-wrapper">
                     <div
                       data-tooltip={
                         helpOn
@@ -125,7 +117,7 @@ export default class App extends React.Component {
                           : null
                       }
                     >
-                      <BucketContainer />
+                      {/* <BucketContainer /> */}
                     </div>
                     <div
                       data-tooltip={
@@ -141,7 +133,7 @@ export default class App extends React.Component {
                           : null
                       }
                     >
-                      <ColorPickerContainer />
+                      {/* <ColorPickerContainer /> */}
                     </div>
                     <div data-tooltip={helpOn ? 'Remove colors (E)' : null}>
                       <EraserContainer />
@@ -153,7 +145,7 @@ export default class App extends React.Component {
                           : null
                       }
                     >
-                      <MoveContainer />
+                      {/* <MoveContainer /> */}
                     </div>
                   </div>
                 </div>
@@ -163,7 +155,7 @@ export default class App extends React.Component {
               </div>
               <div className="app__mobile--container max-width-container">
                 <div className="app__mobile--group">
-                  <button
+                  {/* <button
                     type="button"
                     className="app__copycss-button"
                     onClick={() => {
@@ -174,7 +166,7 @@ export default class App extends React.Component {
                     }
                   >
                     css
-                  </button>
+                  </button> */}
                 </div>
                 <div className="app__mobile--group">
                   <div className="app__social-container">
@@ -185,18 +177,18 @@ export default class App extends React.Component {
                           : null
                       }
                     >
-                      <button
+                      {/* <button
                         type="button"
                         aria-label="Download"
                         className="app__download-button"
                         onClick={() => {
                           this.changeModalType('download');
                         }}
-                      />
+                      /> */}
                     </div>
                     <div className="app__help-container">
                       <div data-tooltip="Toggle help tooltips">
-                        <button
+                        {/* <button
                           type="button"
                           aria-label="Help"
                           className={`app__toggle-help-button
@@ -204,16 +196,16 @@ export default class App extends React.Component {
                           onClick={() => {
                             this.toggleHelp();
                           }}
-                        />
+                        /> */}
                       </div>
                       <div
                         data-tooltip={helpOn ? 'Show keyboard shortcuts' : null}
                       >
-                        <KeyBindings
+                        {/* <KeyBindings
                           onClick={() => {
                             this.changeModalType('keybindings');
                           }}
-                        />
+                        /> */}
                       </div>
                     </div>
                   </div>
@@ -225,17 +217,25 @@ export default class App extends React.Component {
             <PixelCanvasContainer
               drawHandlersFactory={this.drawHandlersFactory}
             />
+            {/* <PaletteGridContainer />      */}
+            {/* <div className="app__central-container-palette">
+              <div className=''>
+                <PaletteGridContainer />                
+              </div>
+              
+            </div> */}
           </div>
+
           <div className="right col-1-4">
             <div className="app__right-side">
               <div className="app__mobile--container">
                 <div className="app__mobile--group">
-                  <PreviewBox
+                  {/* <PreviewBox
                     helpOn={helpOn}
                     callback={() => {
                       this.changeModalType('preview');
                     }}
-                  />
+                  /> */}
                   <div
                     data-tooltip={helpOn ? 'Reset the selected frame' : null}
                     className="max-width-container-centered {"
@@ -251,14 +251,14 @@ export default class App extends React.Component {
                 </div>
                 <div className="app__mobile--group max-width-container-centered {">
                   <div data-tooltip={helpOn ? 'Size of one tile in px' : null}>
-                    <CellSizeContainer />
+                    {/* <CellSizeContainer /> */}
                   </div>
                   <div
                     data-tooltip={
                       helpOn ? 'Animation duration in seconds' : null
                     }
                   >
-                    <DurationContainer />
+                    {/* <DurationContainer /> */}
                     <CellsInfo />
                   </div>
                 </div>
