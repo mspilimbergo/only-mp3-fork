@@ -12,7 +12,6 @@
     "test:watch": "npm run test -- --watch",
     "validate": "npm run lint && npm run csslint && npm run prettier -- --list-different && npm run test",
     "development": "webpack-dev-server --hot",
-    "server": "node ./src/server/loader",
     "server-debug": "node --inspect ./src/server/loader",
     "start": "npm run development"
   },
