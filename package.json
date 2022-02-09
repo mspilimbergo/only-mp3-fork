@@ -12,8 +12,11 @@
     "test:watch": "npm run test -- --watch",
     "validate": "npm run lint && npm run csslint && npm run prettier -- --list-different && npm run test",
     "development": "webpack-dev-server --hot",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "server": "node ./src/server/loader",
     "server-debug": "node --inspect ./src/server/loader",
-    "start": "npm run development"
+    "start": "npm run server",
+    "postinstall": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "main": "index.js",
   "repository": {
@@ -66,7 +69,6 @@
     "react-cookie-consent": "^5.2.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.6",
-    "react-is": "^17.0.2",
     "react-modal": "^3.9.1",
     "react-redux": "^7.1.0",
     "react-transform-hmr": "^1.0.4",
